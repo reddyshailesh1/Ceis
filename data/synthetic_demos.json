@@ -1,0 +1,242 @@
+[
+  {
+    "id": "demo_001",
+    "claim": "Patient's fasting blood glucose was 126 mg/dL on two separate occasions.",
+    "evidence": "Lab results dated 03/15 and 03/22: fasting plasma glucose 126 mg/dL and 128 mg/dL respectively. Patient was confirmed fasting for at least 8 hours prior to each draw.",
+    "expected_verdict": "supported",
+    "category": "lab_values",
+    "note": "Direct numeric match across two measurements; classic diabetes diagnosis threshold test."
+  },
+  {
+    "id": "demo_002",
+    "claim": "Serum potassium level was within normal range at the time of discharge.",
+    "evidence": "Discharge labs (03/28): Na 138 mEq/L, K 2.9 mEq/L, Cl 101 mEq/L, CO2 24 mEq/L. Patient was on furosemide 40 mg daily throughout admission.",
+    "expected_verdict": "contradicted",
+    "category": "lab_values",
+    "note": "K of 2.9 is below normal range (3.5–5.0 mEq/L); claim of 'within normal range' is directly contradicted."
+  },
+  {
+    "id": "demo_003",
+    "claim": "The patient's hemoglobin A1c level suggests long-term hyperglycemia.",
+    "evidence": "CBC and metabolic panel drawn on admission. HbA1c not ordered during this encounter. Previous outpatient records not available for review.",
+    "expected_verdict": "unsupported",
+    "category": "lab_values",
+    "note": "No HbA1c data present; claim cannot be supported or refuted from available evidence."
+  },
+  {
+    "id": "demo_004",
+    "claim": "Serum creatinine is elevated, indicating possible acute kidney injury.",
+    "evidence": "Renal function panel: BUN 42 mg/dL, creatinine 2.3 mg/dL (baseline 0.9 mg/dL per prior records), eGFR 32 mL/min/1.73m². Clinical team initiated IV fluid resuscitation.",
+    "expected_verdict": "supported",
+    "category": "lab_values",
+    "note": "Creatinine >1.5× baseline meets KDIGO AKI criteria; claim is well-supported by numeric evidence."
+  },
+  {
+    "id": "demo_005",
+    "claim": "Troponin I levels remained undetectable throughout the hospitalization.",
+    "evidence": "Serial troponin I: Admission 0.02 ng/mL (normal <0.04), 6 h 0.09 ng/mL (elevated), 12 h 0.15 ng/mL (elevated). Cardiology consulted for rising troponin trend.",
+    "expected_verdict": "contradicted",
+    "category": "lab_values",
+    "note": "Troponin rose to 0.09 and 0.15, contradicting the claim of undetectable levels."
+  },
+  {
+    "id": "demo_006",
+    "claim": "Complete blood count showed findings consistent with bacterial infection.",
+    "evidence": "CBC: WBC 14.2 × 10³/μL with 82% neutrophils and bandemia of 11%. Hemoglobin 11.8 g/dL, platelets 310 × 10³/μL.",
+    "expected_verdict": "supported",
+    "category": "lab_values",
+    "note": "Leukocytosis with left shift (bandemia) is a classic CBC pattern consistent with bacterial infection."
+  },
+  {
+    "id": "demo_007",
+    "claim": "Patient was started on vancomycin for coverage of MRSA.",
+    "evidence": "Medication administration record: vancomycin 1250 mg IV q12h initiated on hospital day 2 per infectious disease recommendations for suspected MRSA bacteremia. Trough levels monitored per protocol.",
+    "expected_verdict": "supported",
+    "category": "medications",
+    "note": "Directly stated in MAR with indication documented; straightforward support case."
+  },
+  {
+    "id": "demo_008",
+    "claim": "The patient received aspirin 325 mg daily for antiplatelet therapy.",
+    "evidence": "Current medication list on admission: aspirin 81 mg PO daily (home medication, continued), metformin 500 mg PO BID, lisinopril 10 mg PO daily.",
+    "expected_verdict": "contradicted",
+    "category": "medications",
+    "note": "Aspirin dose is 81 mg, not 325 mg; dose discrepancy directly contradicts the claim."
+  },
+  {
+    "id": "demo_009",
+    "claim": "Anticoagulation with warfarin was contraindicated due to recent intracranial hemorrhage.",
+    "evidence": "Hematology note: patient has prior history of deep vein thrombosis managed with compression stockings. No anticoagulation initiated. Prior imaging reports not available in current electronic record.",
+    "expected_verdict": "unsupported",
+    "category": "medications",
+    "note": "No documentation of ICH in available evidence; contraindication claim cannot be verified."
+  },
+  {
+    "id": "demo_010",
+    "claim": "Patient was prescribed a beta-blocker as part of heart failure management.",
+    "evidence": "Cardiology discharge summary: carvedilol 3.125 mg PO BID initiated for newly diagnosed HFrEF (EF 35%). Patient counseled on gradual titration schedule. ACE inhibitor and loop diuretic also prescribed.",
+    "expected_verdict": "supported",
+    "category": "medications",
+    "note": "Carvedilol is a beta-blocker explicitly prescribed for heart failure; claim is supported."
+  },
+  {
+    "id": "demo_011",
+    "claim": "Insulin therapy was discontinued upon discharge.",
+    "evidence": "Discharge medication reconciliation: insulin glargine 20 units subcutaneous at bedtime — CONTINUE. Sliding scale regular insulin — CONTINUE. Metformin 1000 mg PO BID — NEW. Patient instructed on home glucose monitoring.",
+    "expected_verdict": "contradicted",
+    "category": "medications",
+    "note": "Insulin therapy was continued, not discontinued; directly contradicts the claim."
+  },
+  {
+    "id": "demo_012",
+    "claim": "No antibiotic therapy was administered during the hospitalization.",
+    "evidence": "Physician orders and MAR reviewed. No antibiotic agents listed. Patient admitted for elective orthopedic procedure; infection prophylaxis not indicated per surgical protocol. IV access maintained for pain management only.",
+    "expected_verdict": "supported",
+    "category": "medications",
+    "note": "MAR confirms absence of antibiotics; claim of no antibiotic therapy is supported."
+  },
+  {
+    "id": "demo_013",
+    "claim": "The patient was diagnosed with type 2 diabetes mellitus during this admission.",
+    "evidence": "Endocrinology consultation note: fasting glucose 136 mg/dL, HbA1c 8.2%. Diagnosis of type 2 diabetes mellitus confirmed. Lifestyle counseling provided. Metformin initiated. Follow-up with outpatient endocrinologist in 4 weeks.",
+    "expected_verdict": "supported",
+    "category": "diagnosis",
+    "note": "New T2DM diagnosis explicitly documented by specialist during the admission."
+  },
+  {
+    "id": "demo_014",
+    "claim": "Imaging confirmed the presence of a pulmonary embolism.",
+    "evidence": "CT pulmonary angiography report: no filling defect identified in pulmonary vasculature. Bilateral lower lobe atelectasis noted. Heart size normal. D-dimer was mildly elevated at 0.6 μg/mL FEU.",
+    "expected_verdict": "contradicted",
+    "category": "diagnosis",
+    "note": "CTPA explicitly negative for PE; elevated D-dimer alone does not confirm PE, claim contradicted."
+  },
+  {
+    "id": "demo_015",
+    "claim": "Differential diagnosis included community-acquired pneumonia.",
+    "evidence": "Emergency department note: patient presented with 3-day history of productive cough, fever, and right-sided pleuritic chest pain. Chest X-ray and CBC ordered. Broad differential being considered pending results.",
+    "expected_verdict": "unsupported",
+    "category": "diagnosis",
+    "note": "Clinical picture is consistent with CAP but it is not explicitly listed in a differential; insufficient to support."
+  },
+  {
+    "id": "demo_016",
+    "claim": "The patient carries a confirmed diagnosis of chronic obstructive pulmonary disease.",
+    "evidence": "Pulmonology note references prior spirometry (performed at outside facility): FEV1/FVC ratio 0.62 post-bronchodilator, FEV1 68% predicted. COPD diagnosed per GOLD criteria. Patient on tiotropium and albuterol PRN at home.",
+    "expected_verdict": "supported",
+    "category": "diagnosis",
+    "note": "Spirometry-confirmed COPD with documented treatment; supports the claim definitively."
+  },
+  {
+    "id": "demo_017",
+    "claim": "The working diagnosis of acute appendicitis was excluded by imaging.",
+    "evidence": "Surgical consult note: abdominal CT with contrast demonstrated acute appendicitis with periappendiceal fat stranding. Patient taken to operating room for laparoscopic appendectomy. Pathology confirmed acute suppurative appendicitis.",
+    "expected_verdict": "contradicted",
+    "category": "diagnosis",
+    "note": "CT confirmed appendicitis; claim that it was excluded is directly contradicted by imaging and pathology."
+  },
+  {
+    "id": "demo_018",
+    "claim": "Echocardiography demonstrated preserved left ventricular ejection fraction.",
+    "evidence": "Transthoracic echocardiogram: left ventricular ejection fraction estimated at 55–60%. Grade I diastolic dysfunction noted. Mild mitral regurgitation. No wall motion abnormalities identified.",
+    "expected_verdict": "supported",
+    "category": "diagnosis",
+    "note": "EF 55–60% is in preserved range (≥50%); claim directly supported by echo findings."
+  },
+  {
+    "id": "demo_019",
+    "claim": "Patient's blood pressure was consistently within normal limits during the monitoring period.",
+    "evidence": "Nursing vital signs documentation (every 4 hours over 48-hour monitoring period): systolic range 108–122 mmHg, diastolic range 68–78 mmHg. No hypertensive episodes recorded. No antihypertensive interventions required.",
+    "expected_verdict": "supported",
+    "category": "vital_signs",
+    "note": "All BP readings within normal range over extended monitoring; unambiguous support."
+  },
+  {
+    "id": "demo_020",
+    "claim": "Oxygen saturation remained above 95% on room air throughout the stay.",
+    "evidence": "Telemetry and nursing notes: SpO2 dropped to 88% on room air on hospital day 3, prompting initiation of supplemental oxygen at 2 L/min via nasal cannula. SpO2 improved to 96% on supplemental O2.",
+    "expected_verdict": "contradicted",
+    "category": "vital_signs",
+    "note": "SpO2 dropped to 88%, requiring supplemental O2; contradicts claim of staying above 95% on room air."
+  },
+  {
+    "id": "demo_021",
+    "claim": "Resting heart rate was elevated above 100 bpm on initial assessment.",
+    "evidence": "Triage vital signs: Temperature 37.4°C, HR 92 bpm, RR 16/min, BP 118/74 mmHg, SpO2 98% on room air. Patient appeared anxious but in no acute distress.",
+    "expected_verdict": "contradicted",
+    "category": "vital_signs",
+    "note": "HR was 92 bpm, below the 100 bpm threshold for tachycardia; claim contradicted by documented vitals."
+  },
+  {
+    "id": "demo_022",
+    "claim": "Patient was febrile on admission with a temperature exceeding 38.3°C.",
+    "evidence": "Admission vital signs at 14:32: temperature 39.1°C (oral), heart rate 108 bpm, blood pressure 102/64 mmHg, respiratory rate 22/min, SpO2 97% on 2 L O2 via NC. Patient was diaphoretic.",
+    "expected_verdict": "supported",
+    "category": "vital_signs",
+    "note": "Temperature 39.1°C clearly exceeds 38.3°C threshold; fever on admission well-supported."
+  },
+  {
+    "id": "demo_023",
+    "claim": "Respiratory rate normalized to below 20 breaths per minute after treatment.",
+    "evidence": "Post-treatment reassessment at 2 hours: RR documented as 24/min. Physician note: 'respiratory status improved subjectively, though tachypnea persists.' Patient still on supplemental oxygen.",
+    "expected_verdict": "contradicted",
+    "category": "vital_signs",
+    "note": "RR remains 24/min (above 20); subjective improvement noted but objective data contradicts claim."
+  },
+  {
+    "id": "demo_024",
+    "claim": "The patient's weight was not documented at admission.",
+    "evidence": "Nursing admission assessment: height 170 cm, weight 84.3 kg, BMI 29.2 kg/m². Nutritional risk screening completed. Dietary consult placed.",
+    "expected_verdict": "contradicted",
+    "category": "vital_signs",
+    "note": "Weight explicitly documented at 84.3 kg; claim that it was not recorded is directly contradicted."
+  },
+  {
+    "id": "demo_025",
+    "claim": "Patient has a history of myocardial infarction.",
+    "evidence": "Past medical history as documented in the admission H&P: hypertension (10 years), hyperlipidemia, osteoarthritis of bilateral knees. Social history: 20 pack-year smoking history, quit 5 years ago. No prior cardiac events documented.",
+    "expected_verdict": "contradicted",
+    "category": "history",
+    "note": "PMH explicitly lists conditions but excludes MI; claim directly contradicted by documented history."
+  },
+  {
+    "id": "demo_026",
+    "claim": "The patient has a documented allergy to penicillin.",
+    "evidence": "Allergy section of admission record: penicillin — reaction: rash (hives), severity: moderate. Documented by patient self-report and confirmed with prior pharmacy records. Allergy band applied.",
+    "expected_verdict": "supported",
+    "category": "history",
+    "note": "Penicillin allergy explicitly documented with reaction type; claim directly and unambiguously supported."
+  },
+  {
+    "id": "demo_027",
+    "claim": "Patient underwent coronary artery bypass grafting within the past five years.",
+    "evidence": "Surgical history: appendectomy (childhood), cholecystectomy (12 years prior), right hip arthroplasty (3 years prior). No cardiovascular surgical procedures noted. Family history significant for coronary artery disease.",
+    "expected_verdict": "contradicted",
+    "category": "history",
+    "note": "Surgical history documented without CABG; claim contradicted by documented absence in surgical history."
+  },
+  {
+    "id": "demo_028",
+    "claim": "Patient has a family history of colon cancer.",
+    "evidence": "Social and family history: patient lives alone, retired teacher, non-smoker, occasional alcohol use. Family history section: 'Patient unable to provide detailed family history due to being adopted.' No family history documented.",
+    "expected_verdict": "unsupported",
+    "category": "history",
+    "note": "No family history available; claim cannot be supported or refuted from incomplete data."
+  },
+  {
+    "id": "demo_029",
+    "claim": "The patient has previously received bariatric surgery.",
+    "evidence": "Nutrition consult note: patient reports a 60-pound weight loss over the past 2 years through dietary modification and exercise. No prior surgeries affecting gastrointestinal anatomy reported. Gastric emptying study may be considered.",
+    "expected_verdict": "contradicted",
+    "category": "history",
+    "note": "Weight loss attributed to lifestyle changes; prior surgeries absence noted, contradicting bariatric surgery claim."
+  },
+  {
+    "id": "demo_030",
+    "claim": "Patient has a history of chronic kidney disease stage 3.",
+    "evidence": "Problem list from longitudinal care record: chronic kidney disease stage 3a (eGFR 45–59 mL/min/1.73m², last confirmed 6 months ago), type 2 diabetes mellitus, essential hypertension, anemia of chronic disease.",
+    "expected_verdict": "supported",
+    "category": "history",
+    "note": "CKD stage 3 explicitly on problem list with eGFR range; claim fully supported with staging detail."
+  }
+]

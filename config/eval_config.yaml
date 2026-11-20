@@ -1,0 +1,73 @@
+# ============================================================
+# CEIS Evaluation Configuration
+# ============================================================
+
+# --- Models ---
+models:
+  base:
+    type: huggingface          # loaded via laya or transformers
+    name: "multilingual"       # laya built-in multilingual model
+    alias: "base"
+
+  mednli_laya:
+    type: huggingface
+    name: "pavanmantha/mednli_laya"
+    alias: "pavanmantha/mednli_laya"
+
+  ceis:
+    type: local                # local fine-tuned checkpoint
+    name: "runs/ceis_seed0"
+    alias: "ceis_seed0"
+
+# --- Datasets ---
+data:
+  mednli_train:    "data/splits/mednli_train.csv"
+  mednli_val:      "data/splits/mednli_val.csv"
+  mednli_test:     "data/splits/mednli_test.csv"
+  pubmedqa_test:   "data/splits/pubmedqa_test.csv"
+
+# --- Label mapping (MedNLI raw → CEIS) ---
+label_map:
+  entailment:    "supported"
+  neutral:       "unsupported"
+  contradiction: "contradicted"
+
+# --- CEIS label order ---
+labels:
+  - "supported"
+  - "unsupported"
+  - "contradicted"
+
+# --- Calibration ---
+calibration:
+  n_bins: 15
+  calib_split: "validation"       # which split to fit temperature on
+  temperature_search_low: 0.1
+  temperature_search_high: 5.0
+  temperature_search_steps: 100
+
+# --- Benchmark ---
+benchmark:
+  splits:
+    - "test"
+  bootstrap_n: 2000
+  bootstrap_seed: 0
+  batch_size: 32
+
+# --- OOD ---
+ood:
+  dataset: "pubmedqa"
+  pubmedqa_label_map:
+    "yes":   "supported"
+    "no":    "contradicted"
+    "maybe": "unsupported"
+  note: >
+    PubMedQA labels (yes/no/maybe) map imperfectly to MedNLI-derived labels.
+    'maybe' is mapped to 'unsupported' as the closest approximation; treat
+    OOD results as indicative only.
+
+# --- Output directories ---
+output:
+  benchmark_dir: "benchmark_out"
+  reports_dir:   "reports"
+  calibration_dir: "benchmark_out"

@@ -1,0 +1,54 @@
+# ============================================================
+# CEIS — Clinical Evidence Intelligence System Training Config
+# ============================================================
+# Fine-tuning LAYA for multi-task clinical claim verification
+
+# --- Output & Checkpoint ------------------------------------
+out: "runs/ceis_seed0"
+base: "pavanmantha/mednli_laya"    # Starting checkpoint: existing fine-tuned MedNLI model
+
+# --- Data ---------------------------------------------------
+repo: "presencesw/mednli"          # MedNLI dataset repo on HF
+data_dir: null                     # Local parquet dir or null to download
+splits_dir: "data/splits"          # Local preprocessed split files
+deid: "keep"                       # "keep" | "mask"
+
+# --- Hardware -----------------------------------------------
+device: "cuda:0"                   # "cuda:0", "cuda:1", or "cpu"
+grad_checkpointing: false
+freeze_embeddings: false
+
+# --- Training schedule --------------------------------------
+seed: 0
+epochs: 6
+batch: 32
+grad_accum: 2                      # Effective batch = 64
+warmup_frac: 0.06
+patience: 2
+
+# --- Optimization -------------------------------------------
+encoder_lr: 2.0e-5
+head_lr: 1.0e-4
+min_lr: 1.0e-6
+weight_decay: 0.01
+grad_clip: 1.0
+label_smoothing: 0.05
+
+# --- Multi-task Loss Weights --------------------------------
+weights:
+  verdict: 0.60                    # 3-way choice (supported/unsupported/contradicted)
+  explicitly_mentioned: 0.20       # yes/no boolean
+  needs_more_evidence: 0.20        # yes/no boolean
+
+# --- Data Augmentation --------------------------------------
+shuffle_prob: 1.0                  # Shuffle option order for choice question
+mismatch_frac: 0.15                # Fraction of batches using mismatched evidence
+
+# --- Calibration & Eval -------------------------------------
+calib_items: 400
+eval_batch: 128
+max_len: 512
+head_max_len: 192
+
+# --- Debug / Smoke test -------------------------------------
+limit: null                        # Set to 200 for smoke testing

@@ -1,0 +1,39 @@
+.idea/
+.venv/
+venv/
+env/
+.env
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Training artefacts
+runs/
+benchmark_out/
+reports/
+
+# Data (raw downloads)
+data/raw/
+data/processed/
+data/splits/
+
+# Model caches
+.hf_cache/
+*.safetensors
+*.bin
+*.pt
+
+# Logs
+*.log
+*.jsonl
+training_log.jsonl
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
