@@ -152,7 +152,7 @@ print("Probabilities:", results["answers"]["verdict"]["probabilities"])
 ## ⚠️ Clinical Disclaimer
 This model is developed strictly for **research and clinical decision support evaluation**. It is not a certified medical device and must not be used as the sole basis for clinical diagnosis or treatment regimens. All outputs should be reviewed by qualified healthcare practitioners.
 
-**Author**: Shailesh Reddy (reddyshailesh1)
+**Authors**: Shailesh Reddy (reddyshailesh1), Karthikeya (karthikeya3342)
 """
         return card.strip() + "\n"
 

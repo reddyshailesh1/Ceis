@@ -91,7 +91,7 @@ class ReportGenerator:
     def _build_research_report(self, bench: dict, calib: Optional[dict], ood: Optional[dict]) -> str:
         lines = [
             "# Clinical Evidence Intelligence System (CEIS) — Research Report",
-            "**Authors**: Shailesh Reddy (reddyshailesh1) & Clinical Evidence Intelligence Lab",
+            "**Authors**: Shailesh Reddy (reddyshailesh1), Karthikeya (karthikeya3342) & Clinical Evidence Intelligence Lab",
             "",
             "## Abstract",
             "We present the **Clinical Evidence Intelligence System (CEIS)**, an advanced medical reasoning framework extending LAYA's non-autoregressive decision engine. By transitioning from single-label inference to a typed, multi-task decision architecture (choice, score, and yes/no primitives), CEIS verifies clinical claims against electronic health records, detects subtle document inconsistencies, quantifies evidence sufficiency, and flags clinical risk for clinician review.",

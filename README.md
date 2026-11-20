@@ -304,6 +304,8 @@ The project includes a unified CLI (`main.py`) and standard `Makefile`:
 
 ---
 
-## 👤 Author
-**Shailesh Reddy** ([@reddyshailesh1](https://github.com/reddyshailesh1))  
-Project: Advanced Clinical Evidence Intelligence System (CEIS)
+## 👥 Authors
+- **Shailesh Reddy** ([@reddyshailesh1](https://github.com/reddyshailesh1))
+- **Karthikeya** ([@karthikeya3342](https://github.com/karthikeya3342))
+
+*Project: Advanced Clinical Evidence Intelligence System (CEIS)*
