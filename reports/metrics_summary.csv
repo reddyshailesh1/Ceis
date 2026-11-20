@@ -1,0 +1,4 @@
+model_id,model_name,accuracy,ci95_low,ci95_high,macro_f1,brier,ece,order_flip_rate,claim_only_acc,latency_ms,throughput
+multilingual,Base LAYA,0.3667,0.2,0.5342,0.3004,0.6945,0.257,0.0,0.1333,0.04,28352.7
+pavanmantha/mednli_laya,MedNLI Fine-Tuned LAYA,0.3,0.1333,0.4667,0.3038,0.937,0.504,0.0,0.1333,0.04,26438.7
+runs/ceis_seed0,CEIS Multi-Task Fine-Tuned,0.3,0.1333,0.4667,0.3038,1.1014,0.5877,0.0,0.1333,0.04,28267.2

@@ -12,7 +12,10 @@ build/
 # Training artefacts
 runs/
 benchmark_out/
-reports/
+bin/
+*.aux
+*.fls
+*.fdb_latexmk
 
 # Data (raw downloads)
 data/raw/

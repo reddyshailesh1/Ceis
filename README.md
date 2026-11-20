@@ -10,7 +10,7 @@
 
 **A Non-Autoregressive, Multi-Question Decision Architecture for Clinical Evidence Verification and Contradiction Detection**
 
-[Live Hugging Face Model](https://huggingface.co/reddyshailesh1/ceis) · [GitHub Repository](https://github.com/reddyshailesh1/Ceis) · [API Documentation](#fastapi-rest-endpoints) · [Quickstart](#-quick-start)
+[Live Hugging Face Model](https://huggingface.co/reddyshailesh1/ceis) · [GitHub Repository](https://github.com/reddyshailesh1/Ceis) · [IEEE Research Paper (PDF)](reports/CEIS_IEEE_Paper.pdf) · [LaTeX Source](reports/CEIS_IEEE_Paper.tex) · [API Documentation](#fastapi-rest-endpoints) · [Quickstart](#-quick-start)
 
 </div>
 
