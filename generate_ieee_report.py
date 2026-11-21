@@ -183,8 +183,8 @@ def build_pdf(filename="reports/CEIS_IEEE_Research_Paper.pdf"):
     story.append(Paragraph("A Non-Autoregressive, Multi-Question Decision Architecture for Clinical Evidence Verification and Contradiction Detection", ParagraphStyle('Subtitle', parent=title_style, fontSize=11, leading=15, fontName='Helvetica', textColor=colors.HexColor("#4B5563"))))
     story.append(Spacer(1, 4))
     
-    story.append(Paragraph("<b>Shailesh Reddy</b> (<code>reddyshailesh1</code>) &nbsp;&nbsp;·&nbsp;&nbsp; <b>Karthikeya</b> (<code>karthikeya3342</code>)", authors_style))
-    story.append(Paragraph("Department of Computer Science & Engineering<br/>Indian Institute of Information Technology, Design and Manufacturing (IIITDM)<br/>Hugging Face Checkpoint: <u>https://huggingface.co/reddyshailesh1/ceis</u> · GitHub: <u>https://github.com/reddyshailesh1/Ceis</u>", affil_style))
+    story.append(Paragraph("<b>Shailesh Reddy</b> (<code>524cs0010@iiitk.ac.in</code>) &nbsp;&nbsp;·&nbsp;&nbsp; <b>Karthikeya</b> (<code>124cs0021@iiitk.ac.in</code>)", authors_style))
+    story.append(Paragraph("Department of Computer Science & Engineering<br/>Indian Institute of Information Technology, Design and Manufacturing (IIITDM), Kurnool<br/>Hugging Face Checkpoint: <u>https://huggingface.co/reddyshailesh1/ceis</u> · GitHub: <u>https://github.com/reddyshailesh1/Ceis</u>", affil_style))
     
     # Disclaimer Box
     disc_data = [[

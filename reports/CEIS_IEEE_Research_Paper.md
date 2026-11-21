@@ -1,8 +1,8 @@
 # Advanced Clinical Evidence Intelligence System (CEIS) Using Fine-Tuned LAYA
 ## A Non-Autoregressive, Multi-Question Decision Architecture for Healthcare NLP
 
-**Shailesh Reddy** (`reddyshailesh1`) &nbsp;·&nbsp; **Karthikeya** (`karthikeya3342`)  
-*Department of Computer Science & Engineering, Indian Institute of Information Technology, Design and Manufacturing (IIITDM)*  
+**Shailesh Reddy** (`524cs0010@iiitk.ac.in`) &nbsp;·&nbsp; **Karthikeya** (`124cs0021@iiitk.ac.in`)  
+*Department of Computer Science & Engineering, Indian Institute of Information Technology, Design and Manufacturing (IIITDM), Kurnool*  
 **Hugging Face**: [https://huggingface.co/reddyshailesh1/ceis](https://huggingface.co/reddyshailesh1/ceis) · **GitHub**: [https://github.com/reddyshailesh1/Ceis](https://github.com/reddyshailesh1/Ceis)
 
 ---
